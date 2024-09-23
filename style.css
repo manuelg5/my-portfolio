@@ -5,7 +5,7 @@ body {
 /* Navigation Bar */
 
 #home {
-  background-color:  #4d6822;
+  background-color:  #000000;
   padding-bottom: 1cm;
   margin-left:-1cm;
   margin-right:-1cm;
@@ -15,19 +15,36 @@ body {
   height: 5mm;
  }
 
-.topmenu {
+ .topmenu {
   color: lightgray;
   margin: 10px;
   padding: 20px;
   font-size: 20px;
-  text-decoration:none;
+  text-decoration: none;
+  position: relative; /* Required for positioning the underline */
+  transition: color 0.3s ease; /* Smooth transition for text color */
+}
+
+.topmenu::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: white; /* Underline color */
+  bottom: 5px; /* Adjust position of the underline */
+  left: 0;
+  transition: width 0.4s ease; /* Smooth underline width transition */
 }
 
 .topmenu:hover {
   color: white;
   font-weight: bolder;
-  text-decoration: underline;
 }
+
+.topmenu:hover::after {
+  width: 100%; /* Expand the underline on hover */
+}
+
 
 .topdiv {
   float: right;
@@ -42,7 +59,6 @@ body {
 
 .profile_name .contact_info {
   font-size: 15px;
-  font-style: italic;
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -95,7 +111,7 @@ h2 {
 #about-me h1 {
   font-size: 65px;
   margin-top: 90px;
-  color: #4d6822;
+  color: #000000;
 }
 
 #about-me p {
@@ -301,8 +317,8 @@ fieldset {
 
 button {
   background-color: #fff;
-  border: 1px solid #4d6822;
-  color: #4d6822;
+  border: 1px solid #000000;
+  color: #000000;
   display: block;
   border-radius: 6px;
   text-align: center;
@@ -310,14 +326,14 @@ button {
   padding: 10px;
   width: 2in;
   font-size: 20px;
+  transition: all 0.3s ease; /* Smooth transition */
 }
 
 button:hover {
-  background-color: #4d6822;
-  border: 1px solid #4d6822;
+  background-color: #16da00;
+  border: 1px solid #109e00;
   color: #fff;
-  display: block;
-  border-radius: 6px;
-  text-align: center;
   cursor: pointer;
+  transform: scale(1.05); /* Slight scaling for depth */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow */
 }
